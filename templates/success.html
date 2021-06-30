@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+  SUCCESS :) :) :)
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'success.css')}}">
+{% endblock %}
+
+{% block body %}
+    <div class="suc-hld">
+      You're Successfully Registered {{ message }} :)
+    </div>
+{% endblock%}

@@ -1,0 +1,49 @@
+-- Count Valuable Customer --
+SELECT cus_id as Customer, count(order_id) as "Total Orders" FROM Orders group by cus_id;
+-- Most Valuable Customer --
+SELECT cus_id, count(ord_details.price) FROM Orders as ord
+	INNER JOIN Order_details as ord_details
+	on ord.order_id = ord_details.order_id
+    group by cus_id
+	Order by ord_details.price DESC LIMIT 5;
+
+-- Highest Order Range --    
+SELECT ord_details.menu_code, ord_details.top_id, sum(ord_details.price) as "High Value Orders" FROM Orders as ord
+	INNER JOIN Order_details as ord_details
+	on ord.order_id = ord_details.order_id
+    group by ord_details.menu_code, ord_details.top_id
+	Order by sum(ord_details.price) DESC LIMIT 5;
+    
+SELECT * FROM Order_details;
+    
+-- Monthly Sales --
+SELECT MONTH(ord.ord_time) as Month, price FROM Order_details as ord_details
+	INNER JOIN Orders as ord
+    on ord_details.order_id = ord.order_id
+    group by MONTH(ord.ord_time);
+    
+-- Net Profit --
+SELECT sup.menu_code, sup.top_id, (pt.p_small - sup.p_small) as small, (pt.p_large - sup.p_large) as Large
+FROM Supplier as sup INNER JOIN Price as pt
+ON (sup.menu_code = pt.menu_code) and (sup.top_id = pt.top_id);
+
+-- Most Sold Pizza --
+SELECT mn.menu_name as Menu, count(ord_details.menu_code) as "Total Orders" FROM Menu as mn
+	INNER JOIN Order_details as ord_details
+    on mn.menu_code = ord_details.menu_code
+    group by mn.menu_code;
+    
+-- Most Use Topping --
+SELECT tp.top_name as Topping, count(ord_details.top_id) as "Total Orders" FROM Topping as tp
+	INNER JOIN Order_details as ord_details
+    on tp.top_id = ord_details.top_id
+    group by tp.top_name;
+    
+-- Count Valuable Supplier --
+SELECT sup_name as "Supplier Name", count(sup.menu_code) FROM Supplier as sup
+	INNER JOIN order_details as ord_details
+	on (sup.menu_code = ord_details.menu_code) and (sup.top_id = ord_details.top_id)
+	group by sup.sup_name;
+    
+-- Lifetime Order --
+SELECT count(order_id) as "Total Orders" FROM Orders;

@@ -1,0 +1,31 @@
+#core{
+  font-family: sans-serif;
+}
+
+#core-header > h1 {
+  margin-top: 20px;
+  text-align: center;
+  background-color: lightgrey;
+  padding-top: 25px;
+  height: 100px;
+  color: white;
+}
+
+#core-body{
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.navbar-nav{
+  justify-content: center;
+}
+
+/* Reference link in the bottom on everypage */
+.ref{
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #f2f2f2;
+
+}

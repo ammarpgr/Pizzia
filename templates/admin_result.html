@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+  {{ query_title }}
+{% endblock %}
+
+{% block body %}
+<div class="shadow p-3 mb-5 bg-white rounded">
+  <table class="table">
+    <tbody>
+      <tr>
+        <th>Customer Id</th>
+        <th>Total Orders</th>
+      </tr>
+      {% for result in msg %}
+      <tr>
+            <td>
+                {{ result.cus_id }}
+            </td>
+            <td>
+                {{ result.ords}}
+            </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<div class="ref">
+  <a href="{{ url_for('admin') }}">Back To Admin</a>
+</div>
+{% endblock%}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+ {{ query_title }}
+{% endblock %}
+
+{% block body %}
+
+<div class="shadow p-3 mb-5 bg-white rounded">
+  <table class="table">
+    <tbody>
+      <tr>
+        <th>Supplier Name</th>
+        <th>Menu Sold</th>
+      </tr>
+      {% for result in msg %}
+      <tr>
+            <td>
+                {{ result.sup_name }}
+            </td>
+            <td>
+                {{ result.menu_sold }}
+            </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<div class="ref">
+  <a href="{{ url_for('admin') }}">Back To Admin</a>
+</div>
+{% endblock%}

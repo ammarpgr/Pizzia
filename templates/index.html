@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+Pizza Day
+{% endblock %}
+
+{% block body %}
+
+<form class="form-group" method="post">
+
+  <!-- Printing Pizza Menus -->
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Pizza</label>
+    <select class="form-control" id="exampleFormControlSelect1" name="pizza">
+      {% for pizza in piz %}
+        <option value="{{ pizza.menu_name }}">{{ pizza.menu_name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <!-- Printing Topping Offering -->
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Topping</label>
+    <select class="form-control" id="exampleFormControlSelect1" name="topping">
+      {% for topping in top %}
+        <option value="{{ topping.top_name }}">{{ topping.top_name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <!-- Printing Size Offering -->
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Size</label>
+    <select class="form-control" id="exampleFormControlSelect1" name="size">
+      <option value="small">Small</option>
+      <option value="large">Large</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-secondary btn-lg btn-block">Add To Cart</button>
+</form>
+
+{% endblock%}

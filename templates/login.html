@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+
+  Login
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'login.css') }}">
+{% endblock %}
+
+{% block body%}
+
+<div class="shadow p-3 mb-5 bg-white rounded">
+
+  <form  method= "post">
+
+      <div class="form-row">
+        <div class="col-md-5 mb-3">
+          <label for="validationDefaultUsername">Username</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend2">@</span>
+            </div>
+            <input name ="user_id" type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-md-5 mb-3">
+          <label for="validationDefault03">Password</label>
+          <input name = "password" type="password" class="form-control" id="validationDefault03" placeholder="Password" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-md-5 mb-3">
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+        </div>
+      </div>
+
+  </form>
+</div>
+
+
+<div class="ref">
+  <a href="{{ url_for('register') }}">Not Have Account Yet!</a>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+  SUCCESS :) :) :)
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'success.css')}}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="shadow p-3 mb-5 bg-white rounded">
+      <form class="" method="post">
+        <div class="suc-hld">
+          Your Payment is {{ message }} :)
+        </div>
+        <button type="submit" class="btn btn-secondary btn-lg btn-block">Order Now!</button>
+      </form>
+    </div>
+    <div class="ref">
+      <a href="{{ url_for('index') }}">Back To Menu</a>
+    </div>
+{% endblock%}

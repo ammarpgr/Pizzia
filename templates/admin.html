@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+Pizza Day Admin
+{% endblock %}
+
+{% block body %}
+
+<div class="shadow p-3 mb-5 bg-white rounded">
+  <form "form-group" method="post">
+
+    <!-- Printing Admin Analysis -->
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Size</label>
+      <select class="form-control" id="exampleFormControlSelect1" name="get_data">
+          <option value="value_customer">Value Customer</option>
+          <option value="high_value_order">High Value Order</option>
+          <option value="monthly_sales">Monthly Sales</option>
+          <option value="net_profit">Net Profit</option>
+          <option value="most_sold_pizza">Most Sold Pizza</option>
+          <option value="most_use_topping">Most Use Topping</option>
+          <option value="valuable_suppliers">Valuable Supplier</option>
+          <option value="lifetime_order">Lifetime Order</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-secondary btn-lg btn-block">Get Result!</button>
+  </form>
+</div>
+
+{% endblock%}

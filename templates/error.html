@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'error.css')}}">
+  ERROR!
+{% endblock %}
+
+{% block body %}
+
+  <!-- Multiple Error Handler using Variable! -->
+  <div class="error-hld">
+      {{ message }}
+  </div>
+  
+{% endblock%}
