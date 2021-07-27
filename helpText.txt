@@ -1,0 +1,10 @@
+prerequisite
+Python and Pip
+
+after run
+
+pip3 install -r requirements.txt
+or
+pip install -r requirements.txt
+
+source_code: https://github.com/ammarpgr/MyPizzaApp
